@@ -163,14 +163,6 @@ int kmeans_run(const KMeansConfig *cfg) {
             shift += squared_distance_2d(&cfg->centroids[c * f], &old_centroids[c * f]);
         }
 
-        /*
-        fprintf(stderr, "iter %d cluster sizes:", iter);
-        for (int c = 0; c < k; ++c) {
-            fprintf(stderr, " %d", counts[c]);
-        }
-        fprintf(stderr, "\n");
-        */
-
         if (shift < cfg->tolerance) {
             break;
         }
