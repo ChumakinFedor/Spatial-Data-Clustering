@@ -15,4 +15,4 @@ with open("data.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["x", "y", "original_label"])
     for (x, yv), label in zip(X, y):
-        writer.writerow([f"{x:.10f}", f"{yv:.10f}", int(label)]) 
+        writer.writerow([f"{x:.10f}", f"{yv:.10f}", int(label)])

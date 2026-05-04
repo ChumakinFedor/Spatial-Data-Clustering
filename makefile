@@ -29,3 +29,7 @@ full:
 	$(MAKE) generate
 	$(MAKE) run
 	$(MAKE) plot
+
+# цель для тестирования
+test: all generate
+	python3 tests.py
