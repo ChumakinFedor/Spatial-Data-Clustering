@@ -1,18 +1,20 @@
 #ifndef KMEANS_H
 #define KMEANS_H
 
+// Конфигурация для алгоритма K-Means
 typedef struct {
-    int n_samples;
-    int n_features;
-    int k;
-    int max_iter;
-    double tolerance;
-    const double *data;
-    int *labels;
-    double *centroids;
-    double *inertia;
+    int n_samples;       // Количество образцов (точек данных)
+    int n_features;      // Количество признаков (размерность данных)
+    int k;               // Количество кластеров
+    int max_iter;        // Максимальное количество итераций
+    double tolerance;    // Минимальное изменение центроидов для остановки алгоритма
+    const double *data;  // Указатель на массив данных (размер n_samples * n_features)
+    int *labels;         // Указатель на массив для хранения меток кластеров (размер n_samples)
+    double *centroids;   // Указатель на массив для хранения центроидов (размер k * n_features)
+    double *inertia;     // Указатель на переменную для хранения значения инерции (опционально, может быть NULL)
 } KMeansConfig;
 
-int kmeans_run(const KMeansConfig *cfg);
-
+/* Функция принимает указатель на структуру конфигурации и возвращает 0 при успешном выполнении 
+или отрицательное значение при ошибке. */
+int kmeans_run(const KMeansConfig *cfg); 
 #endif
